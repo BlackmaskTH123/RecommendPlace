@@ -1,0 +1,192 @@
+/* ===============================
+   RESET & FIX SCROLL BUG
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background: linear-gradient(135deg, #f8b4c4, #b8e0ff);
+  color: #000;              /* เปลี่ยนจากขาว → ดำ */
+  text-align: center;
+  padding: 70px 20px;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  color: #000;              /* หัวข้อสีดำ */
+}
+
+header p {
+  max-width: 900px;
+  margin: 20px auto 0;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #000;              /* ข้อความสีดำ */
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 30px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+  color: #e86aa3;
+}
+
+/* ===============================
+   CARD GRID
+================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* ===============================
+   CARD
+================================ */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 22px 45px rgba(232, 106, 163, 0.35);
+}
+
+/* ===============================
+   IMAGE
+================================ */
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   CARD CONTENT
+================================ */
+.card-content {
+  padding: 28px;
+}
+
+.card-content h3 {
+  font-size: 1.85rem;
+  margin-bottom: 14px;
+  color: #d94c8e;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ===============================
+   OVERLAY
+================================ */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 180, 196, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.map-btn {
+  background: #ffffff;
+  color: #e86aa3;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.map-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 90px;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .card img {
+    height: 260px;
+  }
+}
