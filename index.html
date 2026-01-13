@@ -194,20 +194,15 @@
     });
   });
 
-   const popup = document.getElementById("popup");
+  const popup = document.getElementById("popup");
   const popupClose = document.getElementById("popup-close");
   const popupLink = document.getElementById("popup-link");
 
-  // แสดง popup ครั้งแรกเท่านั้น
-  if (localStorage.getItem("popupShown")) {
-    popup.style.display = "none";
-  } else {
-    popup.style.display = "flex";
-  }
+  // แสดง popup ทุกครั้งที่โหลดเว็บ
+  popup.style.display = "flex";
 
   popupClose.addEventListener("click", () => {
     popup.style.display = "none";
-    localStorage.setItem("popupShown", "true");
   });
 
   popupLink.addEventListener("click", () => {
