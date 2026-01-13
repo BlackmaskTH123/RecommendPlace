@@ -176,11 +176,42 @@
   <p>3. นาย ภาสวิชญ์ อนุกูล</p>
 </footer>
 
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <h2>ยินดีต้อนรับ สู่การแนะนำสถานที่ท่องเที่ยวในประเทศไทย</h2>
+    <p>คลิกปุ่มด้านล่างเพื่อไปยังแบบประเมิน</p>
+    <div class="popup-actions">
+      <button id="popup-link">ไปที่แบบประเมิน</button>
+      <button id="popup-close">ปิด</button>
+    </div>
+  </div>
+</div>
+
 <script>
   document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () => {
       window.open(card.dataset.map, "_blank");
     });
+  });
+
+   const popup = document.getElementById("popup");
+  const popupClose = document.getElementById("popup-close");
+  const popupLink = document.getElementById("popup-link");
+
+  // แสดง popup ครั้งแรกเท่านั้น
+  if (localStorage.getItem("popupShown")) {
+    popup.style.display = "none";
+  } else {
+    popup.style.display = "flex";
+  }
+
+  popupClose.addEventListener("click", () => {
+    popup.style.display = "none";
+    localStorage.setItem("popupShown", "true");
+  });
+
+  popupLink.addEventListener("click", () => {
+    window.location.href = "https://forms.gle/tmv3aiLJyqBJSUwZ9"; // 🔗 เปลี่ยนลิงก์ตรงนี้
   });
 </script>
 
